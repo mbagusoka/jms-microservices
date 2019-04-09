@@ -25,11 +25,16 @@ public class StudentPublishService implements PublishService {
 
     @Override
     public void publish(Object object) {
+        jmsTemplate.convertAndSend("student", parseObject(object));
+    }
+
+    private String parseObject(Object object) {
+        String string = null;
         try {
-            String data = new ObjectMapper().writeValueAsString(object);
-            jmsTemplate.convertAndSend("student", data);
+            string = new ObjectMapper().writeValueAsString(object);
         } catch (JsonProcessingException e) {
             LOGGER.error("JsonException: ", e);
         }
+        return string;
     }
 }

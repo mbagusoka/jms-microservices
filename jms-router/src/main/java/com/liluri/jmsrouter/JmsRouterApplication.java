@@ -11,5 +11,4 @@ public class JmsRouterApplication {
     public static void main(String[] args) {
         SpringApplication.run(JmsRouterApplication.class, args);
     }
-
 }

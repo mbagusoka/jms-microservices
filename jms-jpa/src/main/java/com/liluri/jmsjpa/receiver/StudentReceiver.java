@@ -27,13 +27,18 @@ public class StudentReceiver {
 
     @JmsListener(destination = "student")
     public void receive(String data) {
+        studentService.save(parseToDTO(data));
+    }
+
+    private StudentDTO parseToDTO(String data) {
+        StudentDTO studentDTO = new StudentDTO();
         try {
-            StudentDTO studentDTO = new ObjectMapper().readValue(data, StudentDTO.class);
-            studentService.save(studentDTO);
+            studentDTO = new ObjectMapper().readValue(data, StudentDTO.class);
         } catch (JsonParseException | JsonMappingException e) {
             LOGGER.error("JsonException: ", e);
         } catch (IOException e) {
             LOGGER.error("IOException: ", e);
         }
+        return studentDTO;
     }
 }
