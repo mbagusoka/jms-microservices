@@ -27,7 +27,13 @@ public class StudentReceiver {
 
     @JmsListener(destination = "student")
     public void receive(String data) {
-        studentService.save(parseToDTO(data));
+        StudentDTO studentDTO = parseToDTO(data);
+        if (null != studentDTO) {
+            studentService.save(studentDTO);
+        } else {
+            LOGGER.error("Student DTO is empty");
+            throw new NullPointerException();
+        }
     }
 
     private StudentDTO parseToDTO(String data) {
