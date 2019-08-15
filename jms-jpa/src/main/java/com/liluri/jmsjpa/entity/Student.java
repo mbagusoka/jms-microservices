@@ -17,7 +17,8 @@ public class Student {
         this.address = studentDTO.getAddress();
     }
 
-    public Student() {}
+    public Student() {
+    }
 
     @Id
     @Column(name = "NAME")

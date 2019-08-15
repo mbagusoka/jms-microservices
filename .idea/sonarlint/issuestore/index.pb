@@ -19,3 +19,9 @@ u
 Ejms-jpa/src/main/java/com/liluri/jmsjpa/receiver/StudentReceiver.java,d\a\da4711e2e7dc33bf56b1a813bd3f4b7739e10bb4
 |
 Ljms-jpa/src/main/java/com/liluri/jmsjpa/service/impl/StudentServiceImpl.java,a\3\a3f62a8d05f7dae271cc514bb27e3cf530413a42
+B
+jms-router/pom.xml,0\e\0e8c4301ba57d434fcddb7c7081ef49dea13a505
+J
+jms-jpa/src/main/main1.iml,e\1\e1d1ba48a41a3c0a853ab3b84e0c1de8d34f4259
+L
+jms-router/src/main/main.iml,1\8\1837a422af95b051cec2850f4c241e5ebc8367b0
